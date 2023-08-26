@@ -1,0 +1,240 @@
+{
+	"info": {
+		"_postman_id": "6d526827-64cb-42ee-828e-dada18107998",
+		"name": "Rakesh_singh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27136907"
+	},
+	"item": [
+		{
+			"name": "get ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/student/10 "
+			},
+			"response": []
+		},
+		{
+			"name": "Datadriven_json",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n  \"firstName\": \"{{firstName}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"programme\": \"{{programme}}\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/student/"
+			},
+			"response": []
+		},
+		{
+			"name": "(Add data)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 101,\r\n        \"firstName\": \"Rahul\",\r\n        \"lastName\": \"Kumar\",\r\n        \"email\": \"rahul@gmail.com\",\r\n        \"programme\": \"Financial Analysis\",\r\n        \"courses\": [\r\n            \"Accounting\",\r\n            \"Statistics\"\r\n        ]\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/"
+			},
+			"response": []
+		},
+		{
+			"name": "(Read/Get Data)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "(Update Data)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 101,\r\n    \"firstName\": \"Rahul\",\r\n    \"lastName\": \"Kumar\",\r\n    \"email\": \"rahul@gmail.com\",\r\n    \"programme\": \"Financial Analysis\",\r\n    \"courses\": [\r\n        \"Testing\",\r\n        \"Java\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "(Update/ Replace Data)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 101,\r\n    \"firstName\": \"Rahul\",\r\n    \"lastName\": \"Kumar\",\r\n    \"email\": \"rahul@gmail.com\",\r\n    \"programme\": \"Financial Analysis\",\r\n    \"courses\": [\r\n        \"Testing\",\r\n        \"Java\"\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "(Get data from given Data)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/student/10"
+			},
+			"response": []
+		},
+		{
+			"name": "(Read/Fatch new Data)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/student/10 "
+			},
+			"response": []
+		},
+		{
+			"name": "(Add new Data)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"Student added\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"firstName\": \"Rakesh\",\r\n    \"lastName\": \"Singh\",\r\n    \"email\": \"rajsingh@gmail.com\",\r\n    \"programme\": \"Data Analysis\",\r\n    \"courses\": [\r\n        \"API\",\r\n        \"Tester\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/"
+			},
+			"response": []
+		},
+		{
+			"name": "( Read new data (Add))",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "(Update/Replace  given value and conditionData)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"firstName\": \"Rakesh Pandey\",\r\n    \"lastName\": \"Maneesh Singh\",\r\n    \"email\": \"rajsingh143@gmail.com\",\r\n    \"programme\": \"Data Analysis\",\r\n    \"courses\": [\r\n        \"API\",\r\n        \"Tester\",\"Cloud Enguneer\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "(Update/Replace only email updated)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n    \"firstName\": \"Rakesh 12Pandey\",\r\n    \"lastName\": \"Maneesh 34Singh\",\r\n    \"email\": \"rajsingh22143@gmail.com\",\r\n    \"programme\": \"Data 1Analysis\",\r\n    \"courses\": [\r\n        \"API1\",\r\n        \"Tester\",\"Cloud Enguneer\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "(Delete Data Give the condition)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/student/101"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/student/103",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/student/103"
+			},
+			"response": []
+		}
+	]
+}
