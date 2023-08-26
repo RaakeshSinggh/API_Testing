@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "4792f25f-bc8a-4994-9214-fa5b01f65b05",
+		"name": "DDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27136907"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/student/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"{{firstName}}\",\r\n    \"lastName\":\"{{lastName}}\",\r\n    \"email\":\"{{email}}\",\r\n    \"programme\":\"{{programme}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/student/"
+			},
+			"response": []
+		},
+		{
+			"name": "basic_auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin",
+						"username": "admin"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://the-internet.herokuapp.com/basic_auth"
+			},
+			"response": []
+		}
+	]
+}
