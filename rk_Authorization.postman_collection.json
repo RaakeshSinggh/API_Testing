@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "c0e3a966-50b1-4653-97bb-8e1781be2537",
+		"name": "rk_Authorization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "27136907"
+	},
+	"item": [
+		{
+			"name": "get basic_auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "password",
+						"username": "postman"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://postman-echo.com/basic-auth"
+			},
+			"response": []
+		}
+	]
+}
